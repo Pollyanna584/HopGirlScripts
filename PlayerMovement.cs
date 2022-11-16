@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     //create variable reference
     // e.g. public <type> <name>:
     public Rigidbody2D body;
-
     private Animator anim;
     private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask groundLayer;
@@ -32,20 +31,11 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
-
-        //will check if key is pressed constantly   
-        //if(Input.GetAxis("Jump")>0){
-
-
         //flips player when moving left or right
         if(horizontalInput > 0.01f )
             transform.localScale = Vector3.one;
             else if(horizontalInput < -.01f)
                 transform.localScale = new Vector3(-1, 1, 1);
-
-        //will only check when key is pressed
-
-
 
             //Set Animator parameters
         anim.SetBool("run", horizontalInput != 0);
@@ -105,6 +95,6 @@ public class PlayerMovement : MonoBehaviour
     
     public bool canAttack(){    
         //tk make able to attack while moving
-        return horizontalInput == 0 && isGrounded() && !onWall();
+        return !onWall();
     }
 }
