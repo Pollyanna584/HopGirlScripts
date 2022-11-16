@@ -1,4 +1,7 @@
+//This script is unused but needed if we're doing a room to room camera rather than following the player
+
 using UnityEngine;
+
 
 public class Door : MonoBehaviour
 {
