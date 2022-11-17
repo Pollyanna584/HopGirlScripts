@@ -94,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
     }
     
     public bool canAttack(){    
-        //tk make able to attack while moving
         return !onWall();
     }
 }
